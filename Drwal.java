@@ -17,10 +17,10 @@ public class Drwal {
 
         for(int i=0; i<helpArray.length; i++){
             for(int j=0; j<helpArray[i].length(); j++){
-                if (helpArray[i].split("")[j].equals("#")) {
-                    array[i][j] = 1;
-                } else {
+                if (helpArray[i].split("")[j].equals(" ")) {
                     array[i][j] = 0;
+                } else {
+                    array[i][j] = 1;
                 }
             }
         }
@@ -67,6 +67,17 @@ public class Drwal {
         }
 
         int xStart= Integer.parseInt(args[0]), yStart= Integer.parseInt(args[1]), height= Integer.parseInt(args[3]), weight= Integer.parseInt(args[4]);
+
+        if(xStart>50 || yStart>50){
+            System.out.println("klops");
+            return;
+        }
+
+        if(xStart>weight || yStart>height){
+            System.out.println("klops");
+            return;
+        }
+
         String feeder=args[2];
 
         StringBuilder stringBuilder=new StringBuilder();
