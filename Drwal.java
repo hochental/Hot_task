@@ -73,7 +73,7 @@ public class Drwal {
             return;
         }
 
-        if(xStart>weight || yStart>height){
+        if(xStart>height || yStart>weight){
             System.out.println("klops");
             return;
         }
