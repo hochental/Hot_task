@@ -68,6 +68,17 @@ public class Drwal {
 
         int xStart= Integer.parseInt(args[0]), yStart= Integer.parseInt(args[1]), height= Integer.parseInt(args[3]), weight= Integer.parseInt(args[4]);
 
+        if(xStart>50 || yStart>50){
+            System.out.println("klops");
+            return;
+        }
+
+        if(xStart>height || yStart>weight){
+            System.out.println("klops");
+            return;
+        }
+
+
         String feeder=args[2];
 
         StringBuilder stringBuilder=new StringBuilder();
@@ -82,16 +93,19 @@ public class Drwal {
                 if (line.length() > yStart + weight) {
                     list.add(line.substring(yStart, yStart + weight));
                 } else {
-                    list.add(line.substring(yStart, line.length()));
+                    if(yStart>line.length()){
+
+                    }else
+                        list.add(line.substring(yStart, line.length()));
                 }
             }
             i++;
         }
+
         for(String s: list){
             stringBuilder.append(s);
             stringBuilder.append("\n");
         }
-
         drawMe(stringBuilder.toString(), feeder);
     }
 
